@@ -3,312 +3,284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Craft Car Autoservis</title>
-  <meta name="description" content="Craft Car Autoservis — profesionální péče o vaše auto. Opravy, servis, diagnostika." />
+  <meta name="description" content="Craft Car Autoservis Praha 5 – Zličín. Diagnostika, opravy, přezutí, pneuservis. 25 let zkušeností. Zavolejte +420 725 500 467." />
+  <title>Craft Car Autoservis | Praha 5 – Zličín</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="#" class="nav__logo">Craft<span>Car</span></a>
-      <nav class="nav__links" id="navLinks">
-        <a href="#sluzby">Služby</a>
-        <a href="#o-nas">O nás</a>
-        <a href="#proc-my">Proč my</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <a href="#kontakt" class="btn btn--primary nav__cta">Objednat se</a>
-      <button class="nav__burger" id="burger" aria-label="Menu">
+  <!-- NAVIGACE -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav__logo">Craft Car</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Otevřít menu">
         <span></span><span></span><span></span>
       </button>
-    </div>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#o-nas" class="nav__link">O nás</a></li>
+        <li><a href="#sluzby" class="nav__link">Služby</a></li>
+        <li><a href="#proc-my" class="nav__link">Proč my</a></li>
+        <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
+        <li>
+          <a href="tel:+420725500467" class="btn btn--red nav__cta">Zavolat</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__overlay"></div>
-    <div class="container hero__content">
-      <p class="hero__eyebrow">Profesionální autoservis</p>
-      <h1 class="hero__title">Vaše auto<br />v dobrých rukou</h1>
-      <p class="hero__sub">Diagnostika, opravy, údržba — vše na jednom místě.<br />Rychle, spolehlivě a za férové ceny.</p>
-      <div class="hero__actions">
-        <a href="#kontakt" class="btn btn--primary">Objednat se online</a>
-        <a href="#sluzby" class="btn btn--ghost">Naše služby</a>
-      </div>
-    </div>
-    <div class="hero__scroll" aria-hidden="true">
-      <span class="hero__scroll-line"></span>
-    </div>
-  </section>
+  <main>
 
-  <!-- STATS BAR -->
-  <section class="stats">
-    <div class="container stats__grid">
-      <div class="stats__item">
-        <span class="stats__number">12+</span>
-        <span class="stats__label">let zkušeností</span>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <span class="hero__label">Praha 5 – Zličín</span>
+        <h1 class="hero__title">Váš spolehlivý<br />autoservis v Praze</h1>
+        <p class="hero__sub">Opravíme vaše auto rychle, poctivě a za férovou cenu.<br />25 let zkušeností v pražských autoservisech.</p>
+        <div class="hero__actions">
+          <a href="tel:+420725500467" class="btn btn--red btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Zavolat
+          </a>
+          <a href="mailto:autoservis@bacraftcar.cz" class="btn btn--outline btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+            Napsat email
+          </a>
+        </div>
       </div>
-      <div class="stats__item">
-        <span class="stats__number">3 800+</span>
-        <span class="stats__label">spokojených zákazníků</span>
+      <div class="hero__scroll-hint">
+        <span>Zjistit více</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </div>
-      <div class="stats__item">
-        <span class="stats__number">98 %</span>
-        <span class="stats__label">spokojenost</span>
-      </div>
-      <div class="stats__item">
-        <span class="stats__number">24 h</span>
-        <span class="stats__label">vyřízení zakázky</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section class="services section" id="sluzby">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-head__eyebrow">Co nabízíme</p>
-        <h2 class="section-head__title">Naše služby</h2>
-        <p class="section-head__sub">Kompletní péče o vaše vozidlo — od pravidelné údržby až po složité opravy.</p>
-      </div>
-      <div class="services__grid">
-        <div class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 1 0 4.93 19.07"/><path d="M12 2v2M12 20v2M2 12H4M20 12h2"/></svg>
-          </div>
-          <h3>Diagnostika</h3>
-          <p>Moderní diagnostické přístroje odhalí závadu rychle a přesně. Výsledky dostanete ihned.</p>
+    <!-- O NÁS -->
+    <section class="about" id="o-nas">
+      <div class="container about__grid">
+        <div class="about__text">
+          <span class="section-label">O nás</span>
+          <h2 class="section-title">Autoservis, kde se k vám chovají jako k sousedovi</h2>
+          <p>Jsme malý rodinný autoservis se sídlem v Praze 5 – Zličíně. Náš tým má za sebou přes <strong>25 let zkušeností</strong> v pražských autoservisech a za tu dobu jsme se naučili jednu věc: zákazník potřebuje hlavně vědět, na čem je.</p>
+          <p>U nás žádné zbytečné přemlouvání k opravám, které nepotřebujete. Vždy vám řekneme rovně, co auto potřebuje, co může počkat a kolik to bude stát. Nic víc, nic míň.</p>
+          <a href="#kontakt" class="btn btn--red">Přijďte nás navštívit</a>
         </div>
-        <div class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <div class="about__stats">
+          <div class="stat-card">
+            <span class="stat-card__number">25+</span>
+            <span class="stat-card__label">let zkušeností</span>
           </div>
-          <h3>Opravy motoru</h3>
-          <p>Opravy všech typů motorů včetně turbodmychadel, rozvodů a hlavy válců.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div class="stat-card">
+            <span class="stat-card__number">6</span>
+            <span class="stat-card__label">specializací</span>
           </div>
-          <h3>Pravidelný servis</h3>
-          <p>Výměna oleje, filtrů, svíček a kontrola všech kapalin dle servisního plánu výrobce.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="stat-card">
+            <span class="stat-card__number">Praha&nbsp;5</span>
+            <span class="stat-card__label">Zličín</span>
           </div>
-          <h3>Brzdy & podvozek</h3>
-          <p>Výměna brzdových destiček, kotoučů, tlumičů a geometrie náprav pro bezpečnou jízdu.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          <div class="stat-card">
+            <span class="stat-card__number">férová</span>
+            <span class="stat-card__label">cena vždy</span>
           </div>
-          <h3>Klimatizace</h3>
-          <p>Plnění, čištění a dezinfekce klimatizace. Prověrka těsnosti a výměna filtrů.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
-          </div>
-          <h3>Pneumatiky</h3>
-          <p>Přezutí, vyvážení, opravy defektů a uskladnění pneumatik po celý rok.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section class="about section" id="o-nas">
-    <div class="container about__inner">
-      <div class="about__visual">
-        <div class="about__img-wrap">
-          <div class="about__img-placeholder" aria-hidden="true">
-            <svg viewBox="0 0 80 60" fill="none"><rect width="80" height="60" rx="4" fill="#596268" opacity=".15"/><path d="M10 45 L30 20 L45 35 L55 25 L70 45 Z" fill="#596268" opacity=".3"/><circle cx="20" cy="18" r="6" fill="#596268" opacity=".2"/></svg>
-          </div>
+    <!-- SLUŽBY -->
+    <section class="services" id="sluzby">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Co děláme</span>
+          <h2 class="section-title">Naše služby</h2>
+          <p class="section-desc">Od rychlé výměny oleje až po komplexní diagnostiku – postaráme se o vaše auto od A do Z.</p>
         </div>
-        <div class="about__badge">
-          <span class="about__badge-num">12</span>
-          <span class="about__badge-text">let<br />praxe</span>
-        </div>
-      </div>
-      <div class="about__text">
-        <p class="section-head__eyebrow">O nás</p>
-        <h2>Craft Car — servis s řemeslnou pečlivostí</h2>
-        <p>Jsme rodinný autoservis s více než dvanáctiletou tradicí. Každé vozidlo bereme jako svůj vlastní projekt — pečlivě, zodpovědně a s respektem k vaší investici.</p>
-        <p>Pracujeme s osobními i užitkovými vozy všech značek. Naši mechanici pravidelně absolvují školení a používají nejnovější diagnostické vybavení.</p>
-        <ul class="about__list">
-          <li>Certifikovaní technici</li>
-          <li>Originální i kvalitní aftermarket díly</li>
-          <li>Transparentní nacenění před opravou</li>
-          <li>Záruky na provedené práce</li>
-        </ul>
-        <a href="#kontakt" class="btn btn--primary">Zjistit více</a>
-      </div>
-    </div>
-  </section>
+        <div class="services__grid">
 
-  <!-- WHY US -->
-  <section class="why section" id="proc-my">
-    <div class="container">
-      <div class="section-head section-head--light">
-        <p class="section-head__eyebrow">Proč nás vybrat</p>
-        <h2 class="section-head__title">Vaše výhody</h2>
-        <p class="section-head__sub">Servis, který si pamatujete — protože funguje.</p>
-      </div>
-      <div class="why__grid">
-        <div class="why-card">
-          <div class="why-card__num">01</div>
-          <h3>Férová cena</h3>
-          <p>Před každou opravou dostanete přesnou kalkulaci. Žádná překvapení na faktuře.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card__num">02</div>
-          <h3>Rychlé termíny</h3>
-          <p>Obvykle zvládneme termín do 48 hodin. Expresní opravy na počkání.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card__num">03</div>
-          <h3>Záruka na práci</h3>
-          <p>Na veškeré opravy poskytujeme písemnou záruku 12 měsíců nebo 20 000 km.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card__num">04</div>
-          <h3>Náhradní vozidlo</h3>
-          <p>Potřebujete auto i během opravy? Zapůjčíme vám náhradní vozidlo zdarma.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials section" id="reference">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-head__eyebrow">Reference</p>
-        <h2 class="section-head__title">Co říkají zákazníci</h2>
-      </div>
-      <div class="testimonials__grid">
-        <div class="testimonial-card">
-          <div class="testimonial-card__stars" aria-label="5 hvězd">★★★★★</div>
-          <p>"Skvělý servis, přesná diagnostika a oprava provedena v dohodnutém termínu. Určitě se vrátím."</p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">MN</div>
-            <div>
-              <strong>Martin Novák</strong>
-              <span>Škoda Octavia</span>
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
             </div>
+            <h3 class="service-card__title">Diagnostika motoru</h3>
+            <p class="service-card__desc">Moderní diagnostické vybavení pro přesné určení závady. Žádné dohady, jen data.</p>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-card__stars" aria-label="5 hvězd">★★★★★</div>
-          <p>"Konečně servis, kde vám řeknou pravdu. Cena odpovídala odhadu, práce bez výhrad."</p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">LK</div>
-            <div>
-              <strong>Lucie Kovářová</strong>
-              <span>VW Golf</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-card__stars" aria-label="5 hvězd">★★★★★</div>
-          <p>"Přezul jsem pneumatiky za půl hodiny, cena výborná. Doporučuji všem kolegům."</p>
-          <div class="testimonial-card__author">
-            <div class="testimonial-card__avatar">PH</div>
-            <div>
-              <strong>Pavel Horák</strong>
-              <span>BMW 3</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section class="contact section" id="kontakt">
-    <div class="container contact__inner">
-      <div class="contact__info">
-        <p class="section-head__eyebrow">Kontakt</p>
-        <h2>Objednejte se k nám</h2>
-        <p>Zavolejte nebo vyplňte formulář a my se vám ozveme do 24 hodin.</p>
-        <ul class="contact__details">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.13 1 .37 2 .72 2.95a2 2 0 0 1-.45 2.11L7.91 9.05a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.95.35 1.95.59 2.95.72A2 2 0 0 1 22 16.92z"/></svg>
-            <span>+420 777 123 456</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>info@craftcar.cz</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Průmyslová 42, 110 00 Praha 1</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span>Po–Pá 7:00–18:00 &nbsp;|&nbsp; So 8:00–12:00</span>
-          </li>
-        </ul>
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="service-card__title">Výměna oleje</h3>
+            <p class="service-card__desc">Rychlá výměna motorového oleje a olejového filtru. Obvykle hotovo do 30 minut.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+            </div>
+            <h3 class="service-card__title">Oprava brzd</h3>
+            <p class="service-card__desc">Výměna brzdových destiček, kotoučů i čelistí. Bezpečnost je na prvním místě.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3 class="service-card__title">Přezutí kol</h3>
+            <p class="service-card__desc">Přezutí a vyvážení kol na sezónu. Bez čekání, rychle a spolehlivě.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10H3M21 10V6a2 2 0 00-2-2H5a2 2 0 00-2 2v4M21 10l-2 8H5l-2-8"/><path d="M9 10v8M15 10v8"/></svg>
+            </div>
+            <h3 class="service-card__title">Odtahová služba</h3>
+            <p class="service-card__desc">Auto vás nechalo v štichu? Zavolejte nám, odtáhneme ho a rovnou opravíme.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3 class="service-card__title">Pneuservis</h3>
+            <p class="service-card__desc">Oprava defektů, montáž, demontáž a skladování pneumatik. Vše na jednom místě.</p>
+          </div>
+
+        </div>
+        <div class="services__cta">
+          <p>Potřebujete něco jiného? Zavolejte nám, rádi poradíme.</p>
+          <a href="tel:+420725500467" class="btn btn--red">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +420 725 500 467
+          </a>
+        </div>
       </div>
-      <form class="contact__form" id="contactForm" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Jméno a příjmení *</label>
-            <input type="text" id="name" name="name" placeholder="Jan Novák" required />
+    </section>
+
+    <!-- PROČ MY -->
+    <section class="why" id="proc-my">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Proč my</span>
+          <h2 class="section-title">Co nás odlišuje</h2>
+        </div>
+        <div class="why__grid">
+
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+            </div>
+            <h3 class="why-card__title">Férová cena</h3>
+            <p class="why-card__desc">Cenu vám řekneme předem a od té se neodchýlíme. Žádné přirážky a žádná překvapení na faktuře.</p>
           </div>
-          <div class="form-group">
-            <label for="phone">Telefon *</label>
-            <input type="tel" id="phone" name="phone" placeholder="+420 777 000 000" required />
+
+          <div class="why-card why-card--accent">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="why-card__title">Rychlý servis</h3>
+            <p class="why-card__desc">Větší opravy zvládáme obvykle do druhého dne. U výměny oleje nebo přezutí počkáte jen chvíli.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="why-card__title">Zkušený tým</h3>
+            <p class="why-card__desc">Náš tým mechaniků má dohromady přes 25 let praxe. Osobní přístup a znalost vozu zákazníka.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="contact" id="kontakt">
+      <div class="container contact__grid">
+
+        <div class="contact__info">
+          <span class="section-label">Kontakt</span>
+          <h2 class="section-title">Najdete nás v Zličíně</h2>
+          <p class="contact__intro">Zastavte se k nám nebo nám rovnou zavolejte. Rádi se domluvíme na termínu, který vám vyhovuje.</p>
+
+          <ul class="contact__list">
+            <li class="contact__item">
+              <div class="contact__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="contact__item-label">Telefon</span>
+                <a href="tel:+420725500467" class="contact__item-value contact__item-value--link">+420 725 500 467</a>
+              </div>
+            </li>
+            <li class="contact__item">
+              <div class="contact__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+              </div>
+              <div>
+                <span class="contact__item-label">Email</span>
+                <a href="mailto:autoservis@bacraftcar.cz" class="contact__item-value contact__item-value--link">autoservis@bacraftcar.cz</a>
+              </div>
+            </li>
+            <li class="contact__item">
+              <div class="contact__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="contact__item-label">Adresa</span>
+                <a href="https://maps.google.com/?q=Strojírenská+259/16,+Praha+5+Zličín" target="_blank" rel="noopener noreferrer" class="contact__item-value contact__item-value--link">
+                  Strojírenská 259/16<br />Praha 5 – Zličín
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="opening-hours">
+            <h3 class="opening-hours__title">Orientační otevírací doba</h3>
+            <table class="opening-hours__table">
+              <tbody>
+                <tr>
+                  <td>Pondělí – Pátek</td>
+                  <td><strong>8:00 – 17:00</strong></td>
+                </tr>
+                <tr>
+                  <td>Sobota</td>
+                  <td><strong>8:00 – 12:00</strong></td>
+                </tr>
+                <tr>
+                  <td>Neděle</td>
+                  <td class="closed">Zavřeno</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="opening-hours__note">Individuální domluvě jsme otevřeni – zavolejte nám.</p>
           </div>
         </div>
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="jan@email.cz" />
+
+        <div class="contact__map">
+          <a href="https://maps.google.com/?q=Strojírenská+259/16,+Praha+5+Zličín" target="_blank" rel="noopener noreferrer" class="map-placeholder" aria-label="Otevřít v Google Maps">
+            <div class="map-placeholder__inner">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E8000D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="map-placeholder__title">Strojírenská 259/16</span>
+              <span class="map-placeholder__sub">Praha 5 – Zličín</span>
+              <span class="map-placeholder__cta">Otevřít v Google Maps →</span>
+            </div>
+          </a>
         </div>
-        <div class="form-group">
-          <label for="service">Typ služby</label>
-          <select id="service" name="service">
-            <option value="">Vyberte službu…</option>
-            <option>Diagnostika</option>
-            <option>Oprava motoru</option>
-            <option>Pravidelný servis</option>
-            <option>Brzdy &amp; podvozek</option>
-            <option>Klimatizace</option>
-            <option>Pneumatiky</option>
-            <option>Jiné</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Zpráva</label>
-          <textarea id="message" name="message" rows="4" placeholder="Popište závadu nebo dotaz…"></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary btn--full">Odeslat poptávku</button>
-        <p class="form-note">* Povinné pole. Odpovíme do 24 hodin.</p>
-      </form>
-    </div>
-  </section>
+
+      </div>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
-      <a href="#" class="nav__logo">Craft<span>Car</span></a>
-      <p class="footer__copy">&copy; 2026 Craft Car Autoservis. Všechna práva vyhrazena.</p>
-      <nav class="footer__links">
-        <a href="#sluzby">Služby</a>
-        <a href="#o-nas">O nás</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+      <span class="footer__logo">Craft Car Autoservis</span>
+      <p class="footer__copy">&copy; 2025 Craft Car Autoservis. Všechna práva vyhrazena.</p>
+      <a href="tel:+420725500467" class="footer__phone">+420 725 500 467</a>
     </div>
   </footer>
-
-  <a href="#" class="back-top" id="backTop" aria-label="Zpět nahoru">&#8593;</a>
 
   <script src="assets/js/main.js"></script>
 </body>

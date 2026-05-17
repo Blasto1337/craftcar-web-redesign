@@ -1,69 +1,60 @@
-(() => {
-  const nav     = document.getElementById('nav');
-  const burger  = document.getElementById('burger');
-  const links   = document.getElementById('navLinks');
-  const backTop = document.getElementById('backTop');
-  const form    = document.getElementById('contactForm');
+// Nav: scroll effect
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
-  // Nav scroll state
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-    backTop.classList.toggle('visible', window.scrollY > 400);
-  }, { passive: true });
+// Nav: mobile toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
 
-  // Burger menu
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    links.classList.toggle('open');
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.classList.toggle('active', isOpen);
+  navToggle.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+// Nav: close on link click (mobile)
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
   });
+});
 
-  // Close menu on link click
-  links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      burger.classList.remove('open');
-      links.classList.remove('open');
-    });
-  });
-
-  // Contact form submit (demo)
-  form.addEventListener('submit', e => {
+// Smooth scroll with offset for fixed nav
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (!target) return;
     e.preventDefault();
-    const btn = form.querySelector('button[type=submit]');
-    const orig = btn.textContent;
-    btn.textContent = 'Odesíláme…';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Odesláno! Ozve se vám do 24 h.';
-      btn.style.background = '#3a6b3a';
-      form.reset();
-      setTimeout(() => {
-        btn.textContent = orig;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 5000);
-    }, 1200);
+    const navHeight = header.offsetHeight;
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
   });
+});
 
-  // Simple scroll-in animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
+// Intersection observer: fade-in on scroll
+const fadeEls = document.querySelectorAll(
+  '.service-card, .why-card, .stat-card, .contact__item, .about__text, .about__stats'
+);
 
-  document.querySelectorAll('.service-card, .why-card, .testimonial-card, .stats__item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity .45s ease, transform .45s ease';
-    observer.observe(el);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
   });
+}, { threshold: 0.12 });
 
-  document.addEventListener('animationend', () => {}, { once: true });
-
-  const style = document.createElement('style');
-  style.textContent = '.in-view { opacity: 1 !important; transform: none !important; }';
-  document.head.appendChild(style);
-})();
+fadeEls.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
