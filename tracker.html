@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Craft Car — Project Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      min-height: 100vh;
+      padding: 48px 24px;
+    }
+
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header {
+      margin-bottom: 40px;
+    }
+    .header__eyebrow {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .header__title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+    }
+
+    /* TOTAL PROGRESS */
+    .total {
+      background: #f7f7f7;
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .total__numbers {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .total__done {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1;
+    }
+    .total__of {
+      font-size: 1rem;
+      color: #888;
+    }
+    .total__bar-wrap { flex: 1; min-width: 160px; }
+    .total__label {
+      display: flex;
+      justify-content: space-between;
+      font-size: .78rem;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .total__pct { font-weight: 600; color: #1a1a1a; }
+    .bar {
+      height: 8px;
+      background: #e8e8e8;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .bar__fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width .4s ease;
+    }
+
+    /* PHASES */
+    .phases { display: flex; flex-direction: column; gap: 28px; margin-top: 36px; }
+
+    .phase {
+      border: 1px solid #ebebeb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .phase__head {
+      padding: 20px 24px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .phase__dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .phase__meta { flex: 1; }
+    .phase__name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .phase__period {
+      font-size: .75rem;
+      color: #aaa;
+      font-weight: 500;
+    }
+    .phase__count {
+      font-size: .78rem;
+      font-weight: 600;
+      color: #888;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .phase__bar { padding: 0 24px 16px; border-bottom: 1px solid #ebebeb; padding-top: 14px; }
+    .phase__bar .bar { height: 5px; }
+
+    /* TASKS */
+    .phase__tasks { padding: 8px 0; }
+
+    .task {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 24px;
+      cursor: pointer;
+      transition: background .15s;
+      user-select: none;
+    }
+    .task:hover { background: #fafafa; }
+
+    .task__check {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      border: 1.8px solid #d0d0d0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s, border-color .15s;
+    }
+    .task__check svg {
+      width: 11px;
+      height: 11px;
+      stroke: #fff;
+      stroke-width: 2.5;
+      display: none;
+    }
+    .task.done .task__check svg { display: block; }
+
+    .task__label {
+      font-size: .9rem;
+      color: #1a1a1a;
+      line-height: 1.4;
+      transition: color .15s;
+    }
+    .task.done .task__label {
+      color: #b0b0b0;
+      text-decoration: line-through;
+      text-decoration-color: #ccc;
+    }
+
+    .task__badge {
+      margin-left: auto;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 99px;
+      background: #f0f0f0;
+      color: #888;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <p class="header__eyebrow">Craft Car Autoservis</p>
+    <h1 class="header__title">Project Tracker</h1>
+
+    <div class="total">
+      <div class="total__numbers">
+        <span class="total__done" id="totalDone">0</span>
+        <span class="total__of">/ <span id="totalAll">0</span> úkolů</span>
+      </div>
+      <div class="total__bar-wrap">
+        <div class="total__label">
+          <span>Celkový pokrok</span>
+          <span class="total__pct" id="totalPct">0 %</span>
+        </div>
+        <div class="bar">
+          <div class="bar__fill" id="totalBar" style="width:0%;background:#1a1a1a;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phases" id="phases"></div>
+
+</div>
+<script>
+  const PHASES = [
+    {
+      id: 'brand',
+      name: 'Fáze 1 — Brand kit',
+      period: 'Týden 1–2',
+      color: '#1D9E75',
+      tasks: [
+        { id: 'brand-1', label: 'Logo — finální varianta z Canvy',           done: true  },
+        { id: 'brand-2', label: 'Barvy definovány (#596268, červená, bílá)', done: true  },
+        { id: 'brand-3', label: 'Šablona FB cover v Canvě',                  done: false },
+        { id: 'brand-4', label: 'Šablona příspěvku v Canvě',                 done: false },
+        { id: 'brand-5', label: 'Vizitka',                                   done: false, optional: true },
+      ]
+    },
+    {
+      id: 'web',
+      name: 'Fáze 2 — Web',
+      period: 'Týden 2–4',
+      color: '#534AB7',
+      tasks: [
+        { id: 'web-1', label: 'Návrh webu hotový (GitHub Pages)',            done: true  },
+        { id: 'web-2', label: 'Opravit název BA-CRAFT na Webnode',           done: false },
+        { id: 'web-3', label: 'Odstranit falešné recenze na Webnode',        done: false },
+        { id: 'web-4', label: 'Klikatelné telefonní číslo (tel: link)',      done: false },
+        { id: 'web-5', label: 'Google Maps embed na kontaktní stránce',      done: false },
+        { id: 'web-6', label: 'Doplnit sekci O nás (25 let zkušeností)',     done: false },
+        { id: 'web-7', label: 'Fotografie dílny a týmu',                     done: false },
+        { id: 'web-8', label: 'FB Pixel nasazen na web',                     done: false },
+        { id: 'web-9', label: 'Google Business Profile ověřen',              done: false },
+      ]
+    },
+    {
+      id: 'fb',
+      name: 'Fáze 3 — Facebook',
+      period: 'Týden 3–4',
+      color: '#BA7517',
+      tasks: [
+        { id: 'fb-1', label: 'FB stránka založena',                          done: true  },
+        { id: 'fb-2', label: 'Bio a popis vyplněn',                          done: false },
+        { id: 'fb-3', label: 'Cover fotka nahrána',                          done: false },
+        { id: 'fb-4', label: 'Profilová fotka (logo) nahrána',               done: false },
+        { id: 'fb-5', label: 'Uvítací příspěvek publikován',                 done: false },
+        { id: 'fb-6', label: 'Kamarád přidán jako admin',                    done: false },
+        { id: 'fb-7', label: 'Business Manager nastaven',                    done: false },
+        { id: 'fb-8', label: 'První placená kampaň spuštěna',                done: false },
+      ]
+    },
+    {
+      id: 'ongoing',
+      name: 'Průběžně',
+      period: 'Celý projekt',
+      color: '#888780',
+      tasks: [
+        { id: 'on-1', label: 'QR kód na Google recenze vytištěn',            done: false },
+        { id: 'on-2', label: 'První Google recenze získána',                  done: false },
+        { id: 'on-3', label: 'Vyhodnocení první FB kampaně',                 done: false },
+        { id: 'on-4', label: 'A/B test kreativ',                             done: false },
+      ]
+    }
+  ];
+
+  const STORAGE_KEY = 'craftcar_tracker_v1';
+
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; }
+  }
+  function saveState(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  const state = loadState();
+
+  // Apply saved state on top of defaults
+  PHASES.forEach(phase => {
+    phase.tasks.forEach(task => {
+      if (task.id in state) task.done = state[task.id];
+    });
+  });
+
+  function phaseDone(phase)  { return phase.tasks.filter(t => t.done).length; }
+  function phaseTotal(phase) { return phase.tasks.length; }
+
+  function render() {
+    const container = document.getElementById('phases');
+    container.innerHTML = '';
+
+    let grandDone = 0, grandTotal = 0;
+
+    PHASES.forEach(phase => {
+      const done  = phaseDone(phase);
+      const total = phaseTotal(phase);
+      const pct   = total ? Math.round(done / total * 100) : 0;
+      grandDone  += done;
+      grandTotal += total;
+
+      const el = document.createElement('div');
+      el.className = 'phase';
+      el.innerHTML = `
+        <div class="phase__head">
+          <div class="phase__dot" style="background:${phase.color}"></div>
+          <div class="phase__meta">
+            <div class="phase__name">${phase.name}</div>
+            <div class="phase__period">${phase.period}</div>
+          </div>
+          <div class="phase__count">${done} / ${total}</div>
+        </div>
+        <div class="phase__bar">
+          <div class="bar">
+            <div class="bar__fill" style="width:${pct}%;background:${phase.color};"></div>
+          </div>
+        </div>
+        <div class="phase__tasks">
+          ${phase.tasks.map(task => `
+            <div class="task${task.done ? ' done' : ''}" data-id="${task.id}">
+              <div class="task__check" style="${task.done ? `background:${phase.color};border-color:${phase.color}` : ''}">
+                <svg viewBox="0 0 12 10" fill="none"><polyline points="1,5 4.5,8.5 11,1"/></svg>
+              </div>
+              <span class="task__label">${task.label}</span>
+              ${task.optional ? '<span class="task__badge">volitelné</span>' : ''}
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      // Task click handlers
+      el.querySelectorAll('.task').forEach(taskEl => {
+        taskEl.addEventListener('click', () => {
+          const id = taskEl.dataset.id;
+          const task = phase.tasks.find(t => t.id === id);
+          task.done = !task.done;
+          state[id] = task.done;
+          saveState(state);
+          render();
+        });
+      });
+
+      container.appendChild(el);
+    });
+
+    // Update totals
+    const pct = grandTotal ? Math.round(grandDone / grandTotal * 100) : 0;
+    document.getElementById('totalDone').textContent = grandDone;
+    document.getElementById('totalAll').textContent  = grandTotal;
+    document.getElementById('totalPct').textContent  = pct + ' %';
+    document.getElementById('totalBar').style.width  = pct + '%';
+  }
+
+  render();
+</script>
+</body>
+</html>
