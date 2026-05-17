@@ -250,7 +250,7 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--white);
   margin-bottom: 20px;
 }
 
